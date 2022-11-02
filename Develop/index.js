@@ -52,13 +52,12 @@ const questions = [{
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, function(err) {
-        console.log(fileName)
-        console.log(data)
-        if(err) {
-            return console.log(err)
+    fs.writeFile(fileName, data, function(success) {
+        console.log(fileName, data)
+        if(success) {
+            return console.log(success)
         } else{
-            console.log('Success')
+            console.log('error')
         }
     })
 }
