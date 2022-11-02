@@ -1,6 +1,5 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer')
-console.log('Readme gen test')
 const fs = require('fs')
 
 // TODO: Create an array of questions for user input
@@ -52,7 +51,17 @@ const questions = [{
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, function(err) {
+        console.log(fileName)
+        console.log(data)
+        if(err) {
+            return console.log(err)
+        } else{
+            console.log('Success')
+        }
+    })
+}
 
 // TODO: Create a function to initialize app
 function init() {}
